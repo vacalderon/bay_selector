@@ -1,4 +1,3 @@
 pandas
-math
 streamlit
 bokeh

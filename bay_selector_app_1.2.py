@@ -23,7 +23,6 @@
 
 import pandas as pd
 import streamlit as st
-import math as math
 from bokeh.plotting import figure
 from bokeh.models import Label
 
@@ -78,13 +77,13 @@ for i in range(0,n_beams):
 
     color = '#990000'
     p.line(x, y, line_width=2, color=color)
-    p.add_layout(Label(text=beam_section, x=x[0], y=y[1]*0.5-2.5,angle=math.radians(90)))
+    p.add_layout(Label(text=beam_section, x=x[0], y=y[1]*0.5-2.5,angle=1.570796))
 
 for i in range (0,2):
     x = [0,float(girder_span_select)]
     y = [i*float(beam_span_select),i*float(beam_span_select)]
     color = '#545066'
     p.line(x, y, line_width=4, color=color)
-    p.add_layout(Label(text=girder_section, x=x[1]*0.5-2.5, y=y[0],angle=math.radians(0)))
+    p.add_layout(Label(text=girder_section, x=x[1]*0.5-2.5, y=y[0],angle=0))
 
 st.bokeh_chart(p, use_container_width=True)
